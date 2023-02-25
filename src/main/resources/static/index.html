@@ -6,10 +6,20 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<h1>Search Top News in the World</h1>
+		<h1>Search Top News by Country</h1>
 
 		<form method="GET" action="/topheadlines">
-			<input type="text" name="country" size="30" placeholder="Country name">
+			<select name="country" id="country">
+				<option value="">Select Country</option>
+				<option value="be">Belgium</option>
+                <option value="cn">China</option>
+				<option value="hk">Hong Kong</option>
+                <option value="it">Italy</option>
+                <option value="sg">Singapore</option>
+                <option value="sk">South Korea</option>
+                <option value="uk">UK</option>
+                <option value="us">US</option>
+            </select>
 
             <select name="category" id="category">
 				<option value="">Select Category</option>
@@ -20,7 +30,16 @@
                 <option value="Science">Science</option>
                 <option value="Sports">Sports</option>
                 <option value="Technology">Technology</option>
-              </select>
+            </select>
+
+			<button type="submit">Get</button>
+		</form>
+
+
+		<h1>Search All News in the World</h1>
+
+		<form method="GET" action="/everything">
+			<input type="text" name="q" size="30" placeholder="keyword">
 
 			<button type="submit">Get</button>
 		</form>

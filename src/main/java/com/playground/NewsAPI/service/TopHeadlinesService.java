@@ -38,7 +38,6 @@ public class TopHeadlinesService {
         System.out.printf("NEVER DO THIS!!!!: Top Headlines URL: %s\n", url);
 
         RequestEntity<Void> req = RequestEntity.get(url)
-                        .header("X-Api-Key", apiKey)
                         .accept(MediaType.APPLICATION_JSON)
                         .build();
 
@@ -85,14 +84,18 @@ public class TopHeadlinesService {
             thl.setSource(newsSource);
     
             // Get author of news
-            // String author = "%s".formatted(jo.getString("author"));
-            // thl.setAuthor(author);
-            // System.out.println("Author = " + author);
-    
-            System.out.println(i+1 + ". " + title); //testing
-            System.out.println("by " + newsSource); //testing
+            String author = "%s".formatted(jo.getString("author", "anon"));
+            thl.setAuthor(author);
+            ;
+
+            // testing
+            System.out.println(i+1 + ". " + title);
+            System.out.println("Author = " + author); 
+            System.out.println("by " + newsSource);  
 
         }
         return Optional.of(thl);
     }
+    
+   
 }

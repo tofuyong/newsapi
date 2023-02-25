@@ -11,11 +11,9 @@ public class TopHeadlines {
     private String title;
     private List<String> top10List = new LinkedList<>();
 
-    public String getCountry() {
-        return this.country;
-    }
+    public String getCountry() {return this.country;}
     public void setCountry(String country) {this.country = country;}
-
+    
     public String getCategory() {return this.category;}
     public void setCategory(String category) {this.category = category;}
 

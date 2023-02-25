@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Top Headlines Search Results</title>
+	</head>
+	<body>
+
+		<h1>
+			Top news 
+		</h1>
+
+		<h4 data-th-each="news : ${listEverything}">
+			
+            <span data-th-text="${news.title}"></span>
+			<span data-th-text="'(By ' + ${news.author} +')'"></span>
+            <!-- <span data-th-text="${news.content}"></span> -->
+            <span data-th-text="'-- Published at ' +${news.publishedAt}"></span>
+		</h4>
+
+		<h4><a data-th-href="@{/}">Back</a></h4>
+		
+	</body>
+</html>
